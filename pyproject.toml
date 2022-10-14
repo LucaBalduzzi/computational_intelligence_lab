@@ -8,6 +8,8 @@ packages = [{include = "computational_intelligence_lab"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+jupyter = "^1.0.0"
+numpy = "^1.23.4"
 
 
 [build-system]
