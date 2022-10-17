@@ -55,3 +55,23 @@ The cost of an action is computed as the sum of two terms:
 ## Priority Function
 
 The priority function is simply the cost of the new_state.
+
+## Results
+
+- N = 5, W = 5, Bloat: 0%, Visited Nodes = 3
+
+- N = 10, W = 10, Bloat: 0%, Visited Nodes = 3
+
+- N = 20, W = 23, Bloat: 15%, Visited Nodes = 449
+
+- N = 50, W = , Bloat: %, Visited Nodes = 
+
+- N = 100, Unfeasible for the machine
+
+### Sources
+
+- Giovanni Squillero's Github Computational Intelligence
+
+  - 8 Puzzle Solution
+
+- Giovanni Squillero's Slides of the course Computaional Inelligence 2022/2023
