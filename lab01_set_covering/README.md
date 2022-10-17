@@ -1,4 +1,4 @@
-# Lab 1: Set Covering
+# Lab 01: Set Covering
 
 ## Info for the Reader
 
@@ -26,7 +26,7 @@ and that the total numbers of elements in all $L_{s_i}$ is minimum.
 
 ## Approach
 
-The search function utilized is based on the general graph search algorithm, provided by the professor in his slides, and it is set as breadth-first with heurystics.
+The search function utilized is based on the general graph search algorithm, provided by the professor in his slides, and it is executed as breadth-first with heurystics.
 
 ## State
 
