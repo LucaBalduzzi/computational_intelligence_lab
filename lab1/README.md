@@ -10,7 +10,7 @@ Group members:
 
 - Riccardo Musumarra (s295103)
 
-Main files on which the code has been developed: 
+Main files on which the code has been developed:
 
 - lab1.py
 
