@@ -37,7 +37,7 @@ Once *state.solution* has reached the goal state, the goodness of the result is 
 
 In this context, an "action" is the act of adding a list to the *state.solution*, forming a new state, and "discovering a node" means to add the new state to the frontier according to its computed priority.
 Calculation the space of possible action is trivial, since it is only the set difference between the lists in *state.solution* and the collection of all lists.
-Given that the size of the frontier become quickly unmanageable with $N > 30$, it is necessary to decrease the number of discovered nodes. To achieve this, we only select actions that actually increase the cover. 
+Given that the size of the frontier become quickly unmanageable with $N > 30$, it is necessary to decrease the number of discovered nodes. To achieve this, we only select actions that actually increase the cover.
 Unfortunately this is not effective enough, thus we performed a statistical discrimination based on the bloat. More precisely, we computed the bloat of all of the new states that resulted from adding each of the remaining lists from the previous step. Then we compute the average of such collection, and discarded all the actions the resulted in a greater than average bloat. This last selection, similar to a beam search, was quite effective in reducing memory utilization, even though deprives us the guarantee of completeness given by the breadth-first search.
 
 ### Node Cost
