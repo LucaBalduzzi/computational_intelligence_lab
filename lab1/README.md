@@ -12,7 +12,7 @@ Group members:
 
 Main files on which the code has been developed: 
 
-- lab01.py
+- lab1.py
 
 ## Task
 
