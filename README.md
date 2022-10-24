@@ -12,4 +12,6 @@ Part of a Team with Sergiu Abed and Riccardo Musumarra
 
 <https://github.com/saccuz/Computational_Intelligence/issues/2>
 
+<https://github.com/mistru97/CI_2022_s292623/issues/4>
+
 ### Lab2
