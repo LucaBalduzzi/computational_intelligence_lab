@@ -13,7 +13,7 @@ class Individual:
     # genome = list of genes
     # individual = conceptually, it is a representation of a genome with some extra information (set of covered elements w/o repetitions, weight)
     # weight = nr of elements covered by considering the repetitions
-    # fitness = -weight
+    # fittness = -weight
 
     def __init__(self, genome: list):
         self.genome = genome
@@ -85,13 +85,14 @@ def recombination(ind1: Individual, ind2: Individual):
 
     return Individual(new_genome)
 
-def tournament(population, tournament_size=2):
+def tournament(population, tournament_size=20):
     return max(random.choices(population=population, k=tournament_size), key=lambda i: i.fitness)
 
 def evolution(population):
-    for _ in range(GENERATIONS):
+    offspring = []
+    for g in range(GENERATIONS):
         offspring = []
-        for _ in range(OFFSPRING):
+        for i in range(OFFSPRING):
             o = Individual([])
             if random.random() < 0.3:
                 while not check_solution(o.genome):
@@ -109,8 +110,11 @@ def evolution(population):
 
     return population[0]
 
-
-population = initialize_population(alleles)
+if __name__ == '__main__':
+    population = initialize_population(alleles)
     
-solution = evolution(population)
-print(f"Weight: {solution.weight}")
+    solution = evolution(population)
+    print(f"n: {n}")
+    print(f"weight: {solution.weight}")
+    
+    print(solution.representation)
