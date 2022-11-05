@@ -39,23 +39,6 @@ GENERATIONS = 1000
 
 alleles = problem(N=n, seed=SEED)
 
-#def initialize_population(alleles):    # IGNORE THIS
-#    population = []
-#    
-#    i = 0
-#    while i < POPULATION_SIZE:
-#        weight = 0
-#        genome = []
-#        while weight < n:
-#            allele = alleles[random.randint(0, len(alleles)-1)]
-#            genome.append(allele)
-#            weight += len(allele)
-#
-#        population.append(Individual(genome=genome))
-#        i+=1
-#
-#    return population
-
 def check_solution(genome):     # used for producing the first "generation" of individuals in the population
     s = set()                   # used also for checking if a new individual produced by mutation or recombination is a solution
     for l in genome:
