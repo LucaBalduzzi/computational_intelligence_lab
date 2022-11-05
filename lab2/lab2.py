@@ -13,7 +13,7 @@ class Individual:
     # genome = list of genes
     # individual = conceptually, it is a representation of a genome with some extra information (set of covered elements w/o repetitions, weight)
     # weight = nr of elements covered by considering the repetitions
-    # fittness = -weight
+    # fitness = -weight
 
     def __init__(self, genome: list):
         self.genome = genome
