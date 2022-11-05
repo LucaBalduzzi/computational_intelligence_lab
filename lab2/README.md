@@ -12,7 +12,7 @@ Group members:
 
 Main files on which the code has been developed: 
 
-- set_covering_genetic.py
+- lab2.py
 
 ## Task
 
