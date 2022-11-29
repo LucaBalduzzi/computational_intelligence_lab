@@ -1,7 +1,7 @@
 import random
 import logging
 from operator import xor
-from typing import Union, Callable
+from typing import Union, Callable, NamedTuple
 from copy import deepcopy
 from itertools import accumulate
 from collections import namedtuple
@@ -83,21 +83,31 @@ def cook_status(state: Nim) -> dict:
 
     return cooked
 
-def make_strategy(genome: dict) -> Callable:
+class Genome(NamedTuple):
+    p_take_longest_row: float
+    p_take_max_elem: float
+
+def make_strategy(genome: Genome) -> Callable:
     def evolvable(state: Nim) -> Nimply:
         data = cook_status(state)
 
-        if random.random() < genome["p"]:
-            ply = Nimply(data["shortest_row"], random.randint(1, state.rows[data["shortest_row"]]))
+        if random.random() < genome.p_take_longest_row:
+            row_data = 'shortest_row'
         else:
-            ply = Nimply(data["longest_row"], random.randint(1, state.rows[data["longest_row"]]))
-
+            row_data = 'longest_row'
+        
+        if random.random() < genome.p_take_max_elem:
+            elem_data = 1
+        else:
+            elem_data = state.rows[data[row_data]]
+        
+        ply = Nimply(data[row_data], elem_data)
         return ply
 
     return evolvable
 
 
-NUM_MATCHES = 10
+NUM_MATCHES = 100
 NIM_SIZE = 10
 
 def evaluate(strategy: Callable) -> float:
@@ -109,7 +119,7 @@ def evaluate(strategy: Callable) -> float:
         player = 0
         while nim:
             ply = opponent[player](nim)
-            nim.nimming(ply[0], ply[1])
+            nim.nimming(ply.row, ply.num_objects)
             player = 1 - player
         if player == 1:
             won += 1
@@ -117,20 +127,22 @@ def evaluate(strategy: Callable) -> float:
 
 if __name__ == '__main__':
 
-    logging.getLogger().setLevel(logging.DEBUG)
+    genome = Genome(0.3, 0.4)
 
-    result = evaluate(make_strategy({"p": 0.3}))
+    logging.getLogger().setLevel(logging.INFO)
+
+    result = evaluate(make_strategy(genome))
     logging.info(f'Result of the evaluation: {result}')
 
-    strategy = (make_strategy({"p": 0.1}), optimal_strategy)
+    strategy = (make_strategy(genome), optimal_strategy)
 
     nim = Nim(11)
-    logging.debug(f"status: Initial board\n -> {nim}")
+    logging.debug(f"Status: Initial board\n -> {nim}")
     player = 0
     while nim:
         ply = strategy[player](nim)
-        nim.nimming(ply[0], ply[1])
-        logging.debug(f"status: After {strategy[player].__name__}\n -> {nim}")
+        nim.nimming(ply.row, ply.num_objects)
+        logging.debug(f"Status: After {strategy[player].__name__}\n -> {nim}")
         player = 1 - player
     winner = 1 - player
-    logging.info(f"status: Player {strategy[winner].__name__} won!")
+    logging.info(f"Status: Player {strategy[winner].__name__} won!")
