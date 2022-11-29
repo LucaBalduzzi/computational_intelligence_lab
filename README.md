@@ -15,3 +15,7 @@ Part of a Team with Sergiu Abed and Riccardo Musumarra
 <https://github.com/mistru97/CI_2022_s292623/issues/4>
 
 ### Lab2
+
+<https://github.com/marcopra/computational_intellligence_22_23_294815/issues/3>
+
+<https://github.com/Marco-Masera/comp_int_2022/issues/3>
