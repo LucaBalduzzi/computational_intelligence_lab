@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b25dc9d32ff0e0c1409592c90ef2174415641f74ee9c2941e12885d4b32abadb"
+            "sha256": "5fdf11c6a2fad6847b854c34fe8799fb18c5816ecc4ad3e9cc19dcdcad1d0d1e"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.10"
+            "python_version": "3.11"
         },
         "sources": [
             {
@@ -94,7 +94,7 @@
                 "sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30",
                 "sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"
             ],
-            "markers": "python_version >= '3.6'",
+            "markers": "python_full_version >= '3.6.0'",
             "version": "==4.11.1"
         },
         "bleach": {
@@ -695,7 +695,7 @@
                 "sha256:884a3f4a8c4fc24bb9302f263e0af47d97f0d01fe11ba714171b320c8ac09547",
                 "sha256:d97ac6257de2794f5397609df754fcbca1a603e94e924eb9b99787c031ae2e7c"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_full_version >= '3.7.0'",
             "version": "==0.7.2"
         },
         "nbconvert": {
@@ -769,7 +769,7 @@
                 "sha256:f063b69b090c9d918f9df0a12116029e274daf0181df392839661c4c7ec9018a",
                 "sha256:f9a909a8bae284d46bbfdefbdd4a262ba19d3bc9921b1e76126b1d21c3c34135"
             ],
-            "markers": "python_version >= '3.8'",
+            "index": "pypi",
             "version": "==1.23.5"
         },
         "packaging": {
