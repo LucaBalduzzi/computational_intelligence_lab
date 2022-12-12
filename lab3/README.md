@@ -60,6 +60,15 @@ Both **conditions** and **actions** are part of the genome; also the **genome si
 
 Just a classical implementation of the *minmax decision rule*. A game tree is generated enumerating each possible move in every ply, with a depth limited by a look ahead option. **After that, the nodes are evaluated using a *heuristic value* computed by playing a game against a nim-sum strategy opponent, using as inital state the node's heaps: the inverse of the number of plies is the absolute value, while the sign is positive if the player wins, negative viceversa.** The *minmax strategy* is competitive against a random one and itself, while completely losing against a nim-sum opponent.
 
+## Task 3.4 Reinforcement Learning
+
+Just a classical implementation of RL for Nim. The Agent is made compete with the random strategy to learn the best moves/states for the game. **The rewards of the *Agent* are the following:**
+
+- -1 if the agent makes a normal move or loses the game
+- 0 if the agent performs a nim-sum move and provides a secure state or wins the game
+
+The strategy is not optimized since it provides 1/5 of winning matches against a random player.
+
 ### Sources
 
 - Giovanni Squillero's Github Computational Intelligence
